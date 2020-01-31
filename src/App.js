@@ -1,23 +1,24 @@
 import React from "react";
 import Header from "./components/Header.js";
-import CharacterList from './components/CharacterList';
+import CharacterCard from "./components/CharacterCard.js";
 import WelcomePage from './components/WelcomePage';
+import SearchForm from './components/SearchForm';
+import CharacterList from "./components/CharacterList.js";
 import { Route, Switch, Link } from 'react-router-dom';
 
 export default function App() {
   return (
-    <main>
-<Switch>
-
-<Link to="/">Welcome</Link>
-<Link to="/characters">Characters</Link>
-
-<Route exact path='/' component={WelcomePage}/>
-<Route path="/characters" component={CharacterList}/>
-
-
+    <div>
+      {/* <SearchForm/> */}
       <Header />
-      </Switch>
-    </main>
+
+<Link to="/">Home</Link>
+<Link to="/characterlist">Character List</Link>
+<Link to="/search">Search</Link>
+
+<Route exact path="/" component={WelcomePage}/>
+<Route path="/characterlist" component={CharacterList}/>
+<Route path="/search" component={SearchForm}/>
+</div>
   );
 }
