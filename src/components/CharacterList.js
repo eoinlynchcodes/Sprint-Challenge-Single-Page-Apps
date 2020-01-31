@@ -29,12 +29,11 @@ export default function CharacterList() {
 
   return (
     <div className="character-list">
+      <SearchForm characters={characters} setCharacters={setCharacters}/>
       {
         characters.map((item, key) => {
-          console.log(item);
-          return <div>
-            <CharacterCard item={item} key={key}/>
-            </div>;
+          // console.log(item);
+          return <CharacterCard item={item} key={key}/>;
         })
       }
     </div>
